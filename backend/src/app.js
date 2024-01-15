@@ -1,5 +1,7 @@
 const express = require('express'); 
-const app = express();
+const router = require('./router'); 
 
-app.get('/', (request, response) => response.status(200).send('Olá Mundo!'));
+const app = express();
+app.use(express.json());
+app.use(router);
 module.exports = app;
